@@ -9,7 +9,7 @@ Project Pulse is a tool used by organizations to tract the progress and status o
 Download the git repository manually or clone it by following command
 
 ```
-git clone https://github.com//MASTER-PULSE_01_BE
+git clone https://github.com/ShameerShaik0598/PROJECT-PULSE
 ```
 
 If you download it manually then extract the zip file.

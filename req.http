@@ -9,10 +9,10 @@ post http://localhost:1000/user/user-registration
 Content-Type: application/json
 
 {
-  "first_name":"suri",
-  "last_name":"babu",
-  "email":"suri@westagilelabs.com",
-  "password":"suri"
+  "first_name":"sasi",
+  "last_name":"sasi",
+  "email":"sasi@westagilelabs.com",
+  "password":"sasi"
 }
 
 
@@ -72,7 +72,7 @@ Content-Type: application/json
 
 ### get >> Get all users
 GET http://localhost:1000/super-admin/role/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic3VwZXIiLCJsYXN0X25hbWUiOiJhZG1pbiIsImVtYWlsIjoic3VwZXIgYWRtaW4iLCJyb2xlIjoic3VwZXJfYWRtaW4iLCJpYXQiOjE2Nzg3Njg4MDIsImV4cCI6MTY3ODc3MjQwMn0.ESbuDqFN_N2sqEWbvCB_0sQTODbRlks_dK5K_Bamt
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic3VwZXIiLCJsYXN0X25hbWUiOiJhZG1pbiIsImVtYWlsIjoic3VwZXIgYWRtaW4iLCJyb2xlIjoic3VwZXJfYWRtaW4iLCJpYXQiOjE2ODAwMTUyODIsImV4cCI6MTY4MDAxODg4Mn0.AjSBCAAuh9SEjeih2595pjSCPC7O-mOXFZg-wE-O6zA
 
 
 ### get >> Get all users whose role is not yet allocated
@@ -102,31 +102,31 @@ POST http://localhost:1000/user/user-login
 Content-Type: application/json
 
 {
-"email":"shamir@westagilelabs.com",
-"password":"shamir"
+"email":"admin@westagilelabs.com",
+"password":"admin"
 }
 
 
 ### get >> Get all projects
 GET http://localhost:1000/admin/get-projects
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzaGFtaXJAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzg3OTY1OTcsImV4cCI6MTY3ODgwMDE5N30.m6aRdrYvLybqDTjGqsYgG_5yYDDDvRZpw6xauB3iyA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYWRtaW4iLCJsYXN0X25hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5Ad2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODU0Mzc5ODIsImV4cCI6MTY4NTQ0MTU4Mn0.-OdX0LzDrt8khuYSenIKHJTc9EcVKoaTX2VJdZJ59bQ
 
 
 
 ### >> Get project detailed information by project id
 GET http://localhost:1000/admin/get-projectDetails-Byid/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzaGFtaXJAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzg3OTA5MDAsImV4cCI6MTY3ODc5NDUwMH0.fgU8lLYxPKksUBXny6mEM2sRb7epZzjO3JlmlVh8i1A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYWRtaW4iLCJsYXN0X25hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5Ad2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODUwOTgzNzcsImV4cCI6MTY4NTEwMTk3N30.EBGUEpAoewzYAEKeePOG_PwVoLlMbWMZG7nW03AD06g
 
 
 
 ### post >> Add a project
 POST http://localhost:1000/admin/add-project
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzaGFtaXJAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzg3NzEyMzEsImV4cCI6MTY3ODc3NDgzMX0.-f3ByI8a6DRo05D_Ed7y0oauXf8Mn-UxHc_WIAXpdmU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYWRtaW4iLCJsYXN0X25hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5Ad2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODQ4NDE3MTYsImV4cCI6MTY4NDg0NTMxNn0.86ZXDrmV_lCh3Ks8KBnUbkonHsq6oGKM4JFIdfcV4i0
 
 {
     "client":"test",
-    "project_name":"E-test",
+    "project_name":"E-commerce",
     "client_account_manager":"John Abhraham",
     "status":"In progress",
     "start_date":"03-09-2023",
@@ -134,18 +134,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic
     "project_type":"App_Development",
     "gdo":"sasi@westagilelabs.com",
     "project_manager":"suri@westagilelabs.com",
-    "fitness_indicator":"red"
+    "fitness_indicator":"green"
 
 }
 
 
 ### put >> Modify a project
-put http://localhost:1000/admin/update-project/5
+put http://localhost:1000/admin/update-project/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzaGFtaXJAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzg3NzY4NTIsImV4cCI6MTY3ODc4MDQ1Mn0.FwLe7--xWgNiQb9i8iyN6WCJxcEJl2UPpaYPQOIBA5g
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYWRtaW4iLCJsYXN0X25hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5Ad2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODQ4NDE3MTYsImV4cCI6MTY4NDg0NTMxNn0.86ZXDrmV_lCh3Ks8KBnUbkonHsq6oGKM4JFIdfcV4i0
 
 {
-    "client_account_manager":"Jack"
+    "client_account_manager":"test1cl"
 }
 
 ### put >> Resolve a concern
@@ -160,7 +160,7 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2
 
 ### get >> get resource request
 get http://localhost:1000/admin/get-resource-request
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2hhbWlyIiwibGFzdF9uYW1lIjoic2FtdWVsIiwiZW1haWwiOiJzaGFtaXJAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Nzg3OTM1NDIsImV4cCI6MTY3ODc5NzE0Mn0.o-ZI22qpNYUJckc5MpQ7FRblGRrAa2qrpCMk5PjZBZ8
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoiYWRtaW4iLCJsYXN0X25hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5Ad2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODA1MDM1MDQsImV4cCI6MTY4MDUwNzEwNH0.FDDa-umjBkm3GlXJUzcM1JQ7latJI_wJHhi31IAMGbQ
 
 
 
@@ -178,12 +178,12 @@ Content-Type: application/json
 
 ### get >> Get all projects
 GET http://localhost:1000/gdo/get-projects
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6Imt1bWFyIiwiZW1haWwiOiJzYXNpQHdlc3RhZ2lsZWxhYnMuY29tIiwicm9sZSI6ImdkbyIsImlhdCI6MTY3ODc5MzYwNCwiZXhwIjoxNjc4Nzk3MjA0fQ.vw-QyFHUvWciUgtXPIhIC7zGKF5C4qBC-F9w2-B9IIk
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6InNhc2kiLCJlbWFpbCI6InNhc2lAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiZ2RvIiwiaWF0IjoxNjg1NDMyMjU5LCJleHAiOjE2ODU0MzU4NTl9.dRPdDxFdR35OJIme0UUppbTj27Ku9lEPCBOXp4cSuNI
 
 
 ### get >> Get project detailed information by project id
-GET http://localhost:1000/gdo/project/1
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6Imt1bWFyIiwiZW1haWwiOiJzYXNpQHdlc3RhZ2lsZWxhYnMuY29tIiwicm9sZSI6ImdkbyIsImlhdCI6MTY3ODc5NDg1NCwiZXhwIjoxNjc4Nzk4NDU0fQ.umBUSSwdC6cFS4KoPl6_Hv_8paPNyyx7ydRzpXdEjnU
+GET http://localhost:1000/gdo/get-projectDetails-Byid/1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6InNhc2kiLCJlbWFpbCI6InNhc2lAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiZ2RvIiwiaWF0IjoxNjgwNTgyNzU1LCJleHAiOjE2ODA1ODYzNTV9.A6M7ABXixGT4QOhET0ZjFtOIgWpBVZ3OqJICRD27MhI
 
 
 ### post >> Add a project
@@ -207,26 +207,26 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic
 ### post >> Allocate team
 POST http://localhost:1000/gdo/team/project/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6Imt1bWFyIiwiZW1haWwiOiJzYXNpQHdlc3RhZ2lsZWxhYnMuY29tIiwicm9sZSI6ImdkbyIsImlhdCI6MTY3ODc3NDA4NiwiZXhwIjoxNjc4Nzc3Njg2fQ.C3W45DpXOvzXP2yhYhZ1l1F9DegY5PvfpWJXktWEbeA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6InNhc2kiLCJlbWFpbCI6InNhc2lAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiZ2RvIiwiaWF0IjoxNjgwNDk2MzUxLCJleHAiOjE2ODA0OTk5NTF9.4k1t6aH8fo8dXlqlpY3PNLJSLfaHSWi8OJ89Dch_4pA
 
 {
     "team":[
         {
-            "emp_id":100,
+   
             "name":"shamir",
             "role":"Backend-developer",
             "exposed_to_customer":true,
             "allocation_type":"Permanent"
         },
         {
-            "emp_id":101,
+         
             "name":"sam",
             "role":"devops",
             "exposed_to_customer":true,
             "allocation_type":"Permanent"
         },
         {
-            "emp_id":102,
+  
             "name":"sammy",
             "role":"Frontend-developer",
             "exposed_to_customer":true,
@@ -235,11 +235,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic
     ]
 }
 
+### Get >> management Empployees
+GET http://localhost:1000/user/management-emp
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6Imt1bWFyIiwiZW1haWwiOiJzYXNpQHdlc3RhZ2lsZWxhYnMuY29tIiwicm9sZSI6ImdkbyIsImlhdCI6MTY3ODc5NDg1NCwiZXhwIjoxNjc4Nzk4NDU0fQ.umBUSSwdC6cFS4KoPl6_Hv_8paPNyyx7ydRzpXdEjnU
 
 ### post >> raise a resourcing request
 POST http://localhost:1000/gdo/resource-request/project/1
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6Imt1bWFyIiwiZW1haWwiOiJzYXNpQHdlc3RhZ2lsZWxhYnMuY29tIiwicm9sZSI6ImdkbyIsImlhdCI6MTY3ODc3NDIyNCwiZXhwIjoxNjc4Nzc3ODI0fQ.uSup-Hei4AysXo6uhJSLp5damawyShWc-5PJ6bzljv8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic2FzaSIsImxhc3RfbmFtZSI6InNhc2kiLCJlbWFpbCI6InNhc2lAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoiZ2RvIiwiaWF0IjoxNjgwNDk3MjQ4LCJleHAiOjE2ODA1MDA4NDh9.J8Nm-hJZYa-SL9sGUzRQS7NzoiXXRtZXsJNhiw3iUhA
 
 {
     "resource_desc":"developers needed",
@@ -265,19 +268,20 @@ POST http://localhost:1000/user/user-login
 Content-Type: application/json
 
 {
-"email":"suri@westagilelabs.com",
-"password":"suri"
+"email":"pm@westagilelabs.com",
+"password":"pm"
 }
 
 
 ### get >> Get all projects
 GET http://localhost:1000/project-manager/get-projects
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic3VyaSIsImxhc3RfbmFtZSI6ImJhYnUiLCJlbWFpbCI6InN1cmlAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoicHJvamVjdF9tYW5hZ2VyIiwiaWF0IjoxNjc4Nzg0MDA0LCJleHAiOjE2Nzg3ODc2MDR9.UpC91d-PymAkDmuFUkChIhR_t5LuzqD9GjG2Barm1Q0
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic3VyaSIsImxhc3RfbmFtZSI6ImJhYnUiLCJlbWFpbCI6InN1cmlAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoicHJvamVjdF9tYW5hZ2VyIiwiaWF0IjoxNjgwMjQxMDQ1LCJleHAiOjE2ODAyNDQ2NDV9.nDKmnMHheihw2Uw9X_tLy2cH4F7kyP_cTWBCm6wGCZE
 
 
 ### get >> Get project detailed information by project id
-GET http://localhost:1000/project-manager/project-ById/1
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic3VyaSIsImxhc3RfbmFtZSI6ImJhYnUiLCJlbWFpbCI6InN1cmlAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoicHJvamVjdF9tYW5hZ2VyIiwiaWF0IjoxNjc4NzkyMTIxLCJleHAiOjE2Nzg3OTU3MjF9.2CraL2a2rtfqNKgxpP0-rMM1k8iF1yI5CgYLeDPzCRw
+GET http://localhost:1000/project-manager/get-projectDetails-Byid/1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoicG0iLCJsYXN0X25hbWUiOiJwbSIsImVtYWlsIjoicG1Ad2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoicHJvamVjdF9tYW5hZ2VyIiwiaWF0IjoxNjgwNTA0NDY1LCJleHAiOjE2ODA1MDgwNjV9.vQmkUtbhNbTu3PELCVeebeRDqqYsoeNVWxbGzqtUxu0
+
 
 
 
@@ -297,14 +301,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic
 
 
 ### post >> post concern
-POST http://localhost:1000/project-manager/project-concern/3
+POST http://localhost:1000/project-manager/project-concern/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoic3VyaSIsImxhc3RfbmFtZSI6ImJhYnUiLCJlbWFpbCI6InN1cmlAd2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoicHJvamVjdF9tYW5hZ2VyIiwiaWF0IjoxNjc4NzkzNjgyLCJleHAiOjE2Nzg3OTcyODJ9.GgTcB7A9FX4kxC5HwH3wnLzD4tuK4VObiqhdwEepcAY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdF9uYW1lIjoicG0iLCJsYXN0X25hbWUiOiJwbSIsImVtYWlsIjoicG1Ad2VzdGFnaWxlbGFicy5jb20iLCJyb2xlIjoicHJvamVjdF9tYW5hZ2VyIiwiaWF0IjoxNjgwNTA0NDY1LCJleHAiOjE2ODA1MDgwNjV9.vQmkUtbhNbTu3PELCVeebeRDqqYsoeNVWxbGzqtUxu0
 
 {
     "project_id":1,
     "raised_date":"2022-01-21",
-    "description":"project manager - concern",
+    "description":"new systems needed",
     "severity":"Low",
     "raised_by_client":true
 }

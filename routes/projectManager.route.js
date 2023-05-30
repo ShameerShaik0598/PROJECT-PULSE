@@ -18,7 +18,7 @@ const {
 projectManagerApp.get("/get-projects",getAllProjects);
 
 //get project details by project_id
-projectManagerApp.get("/project-ById/:project_id",getProjectDetails)
+projectManagerApp.get("/get-projectDetails-Byid/:project_id",getProjectDetails)
 
 //project_update
 projectManagerApp.post("/project-update/:project_id", projectUpdates);

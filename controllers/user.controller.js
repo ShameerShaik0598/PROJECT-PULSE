@@ -40,6 +40,7 @@ exports.userRegistration = expressAsyncHandler(async (req, res) => {
 
 //User Login Controller
 exports.userLogin = expressAsyncHandler(async (req, res) => {
+  console.log(req.body);
   let user = await User.findOne({
     where: {
       email: req.body.email,
@@ -67,7 +68,7 @@ exports.userLogin = expressAsyncHandler(async (req, res) => {
       });
       //when requested send token in response
       res.send({
-        message: "Login Successfull",
+        message: "success",
         payload: user,
         token: signedToken,
       });
@@ -139,4 +140,25 @@ exports.resetPassword = expressAsyncHandler(async (req, res) => {
   } else {
     res.send({ message: "Invalid OTP" });
   }
+});
+
+exports.getAllManagementEmp = expressAsyncHandler(async (req, res) => {
+  let AllGdos = await User.findAll({
+    where: {
+      role: "gdo",
+    },
+    attributes: {
+      include: ["email"],
+    },
+  }); 
+  let AllProjectManagers = await User.findAll({
+    where: {
+      role: "project_manager",
+    },
+    attributes: {
+      include: ["email"],
+    },
+  });
+
+  res.send({ gdo: AllGdos, pm: AllProjectManagers });
 });

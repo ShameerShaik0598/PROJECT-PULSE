@@ -4,35 +4,35 @@ const expressAsyncHandler = require("express-async-handler");
 // //importing operator from sequelize
 // const { Op } = require("sequelize");
 
-
 ///////////////////////////////////////   Import Models   /////////////////////////////////////////////
 
 const { Project } = require("..//database/models/project.model");
 const { Concerns } = require("../database/models/concern.model");
 const { Updates } = require("../database/models/updates.model");
 const { Employees } = require("../database/models/employee.model");
-const { ResourcingRequests} = require("../database/models/resourceRequest.model");
+const {
+  ResourcingRequests,
+} = require("../database/models/resourceRequest.model");
 
-
-// Associations   
+// Associations
 
 Project.Employees = Project.hasMany(Employees, { foreignKey: "project_id" });
 Project.Updates = Project.hasMany(Updates, { foreignKey: "project_id" });
 Project.Concerns = Project.hasMany(Concerns, { foreignKey: "project_id" });
 
-
 /////////////////////////////////////////   CONTROLLERS   ////////////////////////////////////////////////////
-
-
 
 // >>>>>>>>>>   Get all Projects   <<<<<<<<<<<<<
 
 exports.getAllProjects = expressAsyncHandler(async (req, res) => {
   let result = await Project.findAll({
     attributes: [
+      "project_id",
       "project_name",
       "client",
       "client_account_manager",
+      "gdo",
+      "project_manager",
       "status",
       "start_date",
       "end_date",
@@ -42,9 +42,7 @@ exports.getAllProjects = expressAsyncHandler(async (req, res) => {
   res.status(200).send({ messages: "Projects ", payload: result });
 });
 
-
-
-//Get project information   
+//Get project information
 
 exports.getProjectDetails = expressAsyncHandler(async (req, res) => {
   //Today's date
@@ -53,18 +51,18 @@ exports.getProjectDetails = expressAsyncHandler(async (req, res) => {
   //Date before two weeks
   let startOfDateRange = new Date();
   startOfDateRange.setDate(endOfDateRange.getDate() - 14);
-  // console.log(startOfDateRange,endOfDateRange);
+
   //get project detailed information from database
-  let result = await Project.findAll({
+  let result = await Project.findOne({
     where: { project_id: req.params.project_id },
     include: [
       {
         association: Project.Updates,
-        attributes: { exclude: ["project_id", "update_id"] },
+        attributes: { exclude: [] },
       },
       {
         association: Project.Concerns,
-        attributes: { exclude: ["project_id", "concern_id"] },
+        attributes: {},
       },
       {
         association: Project.Employees,
@@ -76,6 +74,8 @@ exports.getProjectDetails = expressAsyncHandler(async (req, res) => {
       "client",
       "client_account_manager",
       "status",
+      "gdo",
+      "project_manager",
       "start_date",
       "end_date",
       "fitness_indicator",
@@ -87,30 +87,28 @@ exports.getProjectDetails = expressAsyncHandler(async (req, res) => {
   res.status(200).send({ messages: "Projects are : ", payload: result });
 });
 
-
-
-// Add project details  
+// Add project details
 
 exports.addProject = expressAsyncHandler(async (req, res) => {
   let result = await Project.create(req.body);
-  res.status(200).send({ message: "Project Added Successfully", payload: result });
+  res
+    .status(200)
+    .send({ message: "Project Added Successfully", payload: result });
 });
 
-
-
-// Update project details 
+// Update project details
 exports.updateProject = expressAsyncHandler(async (req, res) => {
-  await Project.update(req.body, {
+  let result = await Project.update(req.body, {
     where: {
       project_id: req.params.project_id,
     },
   });
-  res.status(200).send({ message: "Project Updated Successfully" });
+  res
+    .status(200)
+    .send({ message: "Project Updated Successfully", payload: result });
 });
 
-
-
-// Resolve Concern 
+// Resolve Concern
 
 exports.resolveConcern = expressAsyncHandler(async (req, res) => {
   let date = new Date();
@@ -126,8 +124,7 @@ exports.resolveConcern = expressAsyncHandler(async (req, res) => {
   res.status(200).send({ message: "Concern resolved" });
 });
 
-
-// Get Resource Request  
+// Get Resource Request
 
 exports.getResourceRequest = expressAsyncHandler(async (req, res) => {
   let result = await ResourcingRequests.findAll();

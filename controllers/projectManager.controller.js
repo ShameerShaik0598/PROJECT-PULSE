@@ -36,8 +36,9 @@ exports.getAllProjects = expressAsyncHandler(async (req, res) => {
     let [bearer, token] = req.headers.authorization.split(" ");
     let user = jwt.verify(token, process.env.SECRET_KEY);
     let result = await Project.findAll({
-      where: { project_manager: user.email },
+      where: { project_manager: user.first_name },
       attributes: [
+        "project_id",
         "project_name",
         "client",
         "client_account_manager",
@@ -73,15 +74,15 @@ exports.getProjectDetails = expressAsyncHandler(async (req, res) => {
       include: [
         {
           association: Project.Updates,
-          attributes: { exclude: ["project_id", "update_id"] },
+          // attributes: { exclude: ["project_id", "update_id"] },
         },
         {
           association: Project.Concerns,
-          attributes: { exclude: ["project_id", "concern_id"] },
+          // attributes: { exclude: ["project_id", "concern_id"] },
         },
         {
           association: Project.Employees,
-          attributes: { exclude: ["project_id"] },
+          // attributes: { exclude: ["project_id"] },
         },
       ],
       attributes: [
@@ -117,9 +118,9 @@ exports.projectConcern = expressAsyncHandler(async (req, res) => {
   let date = new Date();
   //add today's date to body
   req.body.raised_date = date;
-  //raised by 
+  //raised by
   req.body.project_id = req.params.project_id;
-  req.body.raised_by = "suri";
+  req.body.raised_by = "pm";
   //setting initializing status to raised
   req.body.status = "raised";
 

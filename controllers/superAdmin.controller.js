@@ -22,7 +22,7 @@ exports.notAssignedRoles = expressAsyncHandler(async (req, res) => {
       role: null,
     },
     attributes: {
-      exclude: ["password", "role", "createdAt", "updatedAt"],
+      exclude: ["password", "createdAt", "updatedAt"],
     },
   });
   res.send({
@@ -35,7 +35,7 @@ exports.notAssignedRoles = expressAsyncHandler(async (req, res) => {
 exports.getUsers = expressAsyncHandler(async (req, res) => {
   let allUsers = await User.findAll({
     attributes: {
-      exclude: ["password", "createdAt", "updatedAt", "role"],
+      exclude: ["password", "createdAt", "updatedAt"],
     },
   });
   res.send({ message: "All users are:", payload: allUsers });
@@ -43,7 +43,7 @@ exports.getUsers = expressAsyncHandler(async (req, res) => {
 
 //Delete user
 exports.deleteUser = expressAsyncHandler(async (req, res) => {
-  await User.update(
+  let updateCount=await User.update(
     { status: false },
     {
       where: {
@@ -51,5 +51,6 @@ exports.deleteUser = expressAsyncHandler(async (req, res) => {
       },
     }
   );
-  res.send({ message: "User Deleted Successfully" });
+  if (updateCount != 0) res.send({ message: "User deleted sucessfully" });
+  else res.status(204).send({ message: "User not found " });
 });

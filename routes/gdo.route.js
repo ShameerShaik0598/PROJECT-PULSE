@@ -20,7 +20,7 @@ const {
 gdoApp.get("/get-projects", getAllProjects);
 
 //get project full details
-gdoApp.get("/project/:project_id", getProjectDetails);
+gdoApp.get("/get-projectDetails-Byid/:project_id", getProjectDetails);
 
 //add project
 gdoApp.post("/add-project", addProject);

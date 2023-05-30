@@ -35,8 +35,9 @@ exports.getAllProjects = expressAsyncHandler(async (req, res) => {
     let [bearer, token] = req.headers.authorization.split(" ");
     let user = jwt.verify(token, process.env.SECRET_KEY);
     let allProjects = await Project.findAll({
-      where: { gdo: user.email },
+      where: { gdo: user.first_name },
       attributes: [
+        "project_id",
         "project_name",
         "client",
         "client_account_manager",
@@ -96,8 +97,8 @@ exports.getProjectDetails = expressAsyncHandler(async (req, res) => {
     console.log(startOfDateRange, endOfDateRange);
 
     //fetching project detailed info from database
-    let result = await Project.findAll({
-      where: { project_id: req.params.project_id, gdo: user.email },
+    let result = await Project.findOne({
+      where: { project_id: req.params.project_id, gdo: user.first_name },
       include: [
         {
           association: Project.Updates,
@@ -105,7 +106,7 @@ exports.getProjectDetails = expressAsyncHandler(async (req, res) => {
         },
         {
           association: Project.Concerns,
-          attributes: { exclude: ["project_id", "concern_id"] },
+          attributes: {  },
         },
         {
           association: Project.Employees,
@@ -114,6 +115,8 @@ exports.getProjectDetails = expressAsyncHandler(async (req, res) => {
       ],
       attributes: [
         "project_name",
+        "gdo",
+        "project_manager",
         "client",
         "client_account_manager",
         "status",

@@ -11,6 +11,7 @@ const {
   userLogin,
   forgetPassword,
   resetPassword,
+  getAllManagementEmp
 } = require("../controllers/user.controller");
 
 //ROUTES
@@ -29,5 +30,8 @@ userApp.post("/forgot-password", forgetPassword);
 
 //reset-password
 userApp.post("/reset-password/email/:email", resetPassword);
+
+//Route to fetch all management emp details
+userApp.get("/management-emp",getAllManagementEmp)
 
 module.exports = userApp;
